@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet : CTF</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="welcome-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                [SYSTEM] | Message important
+            </div>
+            <div class="modal-body">
+                <p>Bienvenue sur mon Projet/CTF.</p>
+                <p style="margin-top: 10px; color: #A0A0A0;">
+                    Ce projet est à titre éducatif, le but est d'apprendre les différentes techniques réalisables pour chaque exercice et catégorie, même s'il y a plusieurs moyens de trouver un flag, mes instructions seront focalisées sur une seule solution. Par conséquent, l'usage de l'IA est inutile. En accédant à ce site, vous acceptez de respecter les règles du jeu. L'usage d'un ordinateur avec Linux installé dessus (OS principal, Machine virtuelle, WSL) est recommandé. <br><br>
+                    Avant tout il faudra installé : Gcc, Gdb, Python, Pwntools, Ghidra, Wireshark. <br>
+                    Il faut aussi utiliser de quoi déchiffrer certains flags, code ou cyberchef seront utiles.
+                </p>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="accept-rules">
+                    <label for="accept-rules">J'ai lu et j'accepte les conditions d'utilisation</label>
+                </div>
+                <button id="enter-btn" onclick="closeModal()">ENTER_SYSTEM</button>
+            </div>
+        </div>
+    </div>
+    <div id="dwm-bar">
+        <div class="tags">
+            <span class="tag active" onclick="filterCat('ALL', this)">1:all</span>
+            <span class="tag" onclick="filterCat('REVERSE', this)">2:rev</span>
+            <span class="tag" onclick="filterCat('PWN', this)">3:pwn</span>
+            <span class="tag" onclick="filterCat('OSINT', this)">4:osi</span>
+            <span class="tag" onclick="filterCat('WEB', this)">5:web</span>
+            <span class="tag" onclick="filterCat('FORENSICS', this)">6:for</span>
+        </div>
+        <div class="status-text">
+            Score: <span id="totalScore">0</span> pts | 
+            Progress: <span id="solvedCount">0</span>/15 | 
+            User: root@ctf
+        </div>
+    </div>
+    <div class="container">
+        <div id="challengesList">
+            </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

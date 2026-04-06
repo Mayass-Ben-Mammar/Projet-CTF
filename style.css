@@ -1,0 +1,221 @@
+:root {
+    --gentoo-purple: #54487A;
+    --gentoo-purple-light: #7E73B8;
+    --bg-dark: #1A1A1A;
+    --bg-bar: #000000;
+    --bg-window: #262626;
+    --fg-main: #DDDDDD;
+    --fg-muted: #A0A0A0;
+    --border-inactive: #444444;
+    --border-active: #7E73B8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 0 !important;
+}
+
+body { 
+    font-family: 'Courier New', 'Ubuntu Mono', monospace;
+    background: var(--bg-dark); 
+    color: var(--fg-main); 
+    padding-top: 25px;
+    font-size: 14px;
+}
+
+#dwm-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 22px;
+    background: var(--bg-bar);
+    border-bottom: 1px solid var(--border-inactive);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    font-size: 12px;
+}
+
+.tags { 
+    display: flex; 
+    height: 100%; 
+}
+
+.tag {
+    padding: 0 10px;
+    border-right: 1px solid var(--border-inactive);
+    line-height: 22px;
+    cursor: pointer;
+    color: var(--fg-muted);
+    transition: background 0.1s;
+}
+
+.tag:hover {
+    background: #333;
+}
+
+.tag.active {
+    background: var(--gentoo-purple);
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.status-text {
+    padding: 0 10px;
+    color: var(--fg-muted);
+}
+
+#totalScore, #solvedCount { 
+    color: #ffffff; 
+    font-weight: bold; 
+}
+
+.container { 
+    max-width: 100%;
+    padding: 10px; 
+}
+
+#challengesList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 8px;
+}
+
+.challenge { 
+    background: var(--bg-window); 
+    border: 1px solid var(--border-inactive); 
+    padding: 10px; 
+    transition: none;
+}
+
+.challenge:hover { 
+    border-color: var(--border-active); 
+}
+
+.challenge.solved { 
+    border-color: #238636;
+}
+
+.challenge-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-inactive);
+    margin-bottom: 10px;
+    padding-bottom: 3px;
+}
+
+.challenge-header h3 {
+    font-size: 1.1em;
+    margin-bottom: 0;
+    color: var(--fg-main);
+}
+
+.download-btn {
+    color: var(--gentoo-purple-light);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.85em;
+    padding: 2px 5px;
+    transition: all 0.2s;
+}
+
+.download-btn:hover {
+    color: #ffffff;
+    background: var(--gentoo-purple);
+}
+
+.input-group {
+    display: flex;
+    margin-top: 10px;
+}
+
+input { 
+    background: #000000; 
+    color: #00ff00;
+    border: 1px solid var(--border-inactive); 
+    padding: 5px; 
+    flex-grow: 1;
+    font-family: inherit;
+}
+
+input:focus { 
+    border-color: var(--border-active); 
+    outline: none; 
+}
+
+button { 
+    background: var(--gentoo-purple); 
+    color: #ffffff; 
+    border: 1px solid var(--border-inactive); 
+    padding: 5px 15px; 
+    cursor: pointer; 
+    font-family: inherit;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+button:hover { 
+    background: var(--gentoo-purple-light); 
+    border-color: #ffffff; 
+}
+
+.solved-text { 
+    color: #238636; 
+    font-weight: bold; 
+    display: block; 
+    margin-top: 5px; 
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-content {
+    background: var(--bg-window);
+    border: 1px solid var(--border-active);
+    width: 450px;
+    padding: 0;
+}
+
+.modal-header {
+    background: var(--gentoo-purple);
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.checkbox-group {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+.checkbox-group input {
+    width: auto;
+    margin-right: 10px;
+}
+
+#enter-btn {
+    width: 100%;
+    margin-left: 0;
+}
