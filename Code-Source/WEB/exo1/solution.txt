@@ -1,0 +1,1 @@
+il faudra regardé le fichier robots.txt pour y trouver le MDP temporaire afin d'avoir le flag dans la page web

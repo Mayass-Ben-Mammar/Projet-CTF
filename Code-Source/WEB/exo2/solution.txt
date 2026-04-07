@@ -1,0 +1,8 @@
+cette page HTML simule une page web avec serveur,
+pour avoir le flag il faut y faire une injection SQL,
+ici sans serveur on utilise le JavaScript pour simuler une injection avec :
+' OR 1=1 --
+
+' -> sortir de la zone de text
+OR 1=1 -> avoir une condition toujours vraie
+-- -> on ignore le reste de la ligne

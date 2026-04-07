@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Connexion Sécurisée</title>
+    <style>
+        body { font-family: sans-serif; background: #2c3e50; color: white; text-align: center; padding-top: 100px; }
+        .login-box { background: #34495e; padding: 30px; border-radius: 10px; display: inline-block; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        input { display: block; margin: 10px auto; padding: 10px; width: 250px; border: none; border-radius: 3px; }
+        button { padding: 10px 20px; background: #e67e22; border: none; color: white; cursor: pointer; border-radius: 3px; font-weight: bold; }
+        #result { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h2>🔒 Administration</h2>
+        <input type="text" id="username" placeholder="Nom d'utilisateur">
+        <input type="password" id="password" placeholder="Mot de passe">
+        <button onclick="login()">Se connecter</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function login() {
+            const user = document.getElementById("username").value;
+            const pass = document.getElementById("password").value;
+            const result = document.getElementById("result");
+
+            // On simule une requête SQL vulnérable :
+            // "SELECT * FROM users WHERE username = '" + user + "' AND password = '" + pass + "'"
+            
+            // La condition de victoire simule l'injection ' OR 1=1 --
+            if (user.includes("' OR 1=1") || user.includes("' OR '1'='1")) {
+                result.innerHTML = "<span style='color: #2ecc71;'>Injection réussie !<br>Flag : CTF{SQL_1NJ3CT10N_M4ST3R}</span>";
+            } else if (user === "admin" && pass === "P4ssw0rd_Ultra_Complexe_99!") {
+                result.innerHTML = "<span style='color: #2ecc71;'>Connexion réussie ! Flag : CTF{SQL_1NJ3CT10N_M4ST3R}</span>";
+            } else {
+                result.innerHTML = "<span style='color: #e74c3c;'>Identifiants incorrects.</span>";
+            }
+        }
+    </script>
+</body>
+</html>

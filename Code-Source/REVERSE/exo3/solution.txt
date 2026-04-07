@@ -1,0 +1,3 @@
+il vas falloir mettre le programme dans ghidra et en extraire les octets,
+
+une fois tous mis de coté il faudra les convertir en utilisant XOR et la clé dans le code

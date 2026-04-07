@@ -1,0 +1,3 @@
+il faut verifié si le .png est lisible, soit une application soit la commande 'file'.
+
+une fois qu'on voit que l'image n'est pas detecté il faut ouvrir l'image via un lecteur HEX et changer les bits de signature par ceux de base (voir wiki)

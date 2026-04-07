@@ -1,0 +1,1 @@
+il faut lancé le programme et convertir les valeurs hex en texte lissible

@@ -1,0 +1,1 @@
+il faut ouvrir le .pcap dans wireshark (ou wireview en ligne) pour regarder le trafic, il faut regardé attentivement les requetes et voir celle HTTP, en prendre le 'session_token' et le decodé.

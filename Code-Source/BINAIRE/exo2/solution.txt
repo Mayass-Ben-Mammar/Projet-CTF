@@ -1,0 +1,1 @@
+ici nous devons utilisé '%p' pour nous donné l'addresse du code, il faudre le faire 9fois pour avoir une suite de code HEX à decoder en texte, ensuite le resultat donnera un code base 64 à l'envers qu'il faudra decoder

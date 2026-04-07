@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /secret_admin_page.html
+# Mot de passe de secours : P4SSW0RD_1337

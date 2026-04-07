@@ -1,0 +1,6 @@
+il faut utiliser la commande strings.
+on peut rajouter grep pour n'avoir que le flag
+
+strings ex1
+ou
+strings ex1 | grep "CTF{"
